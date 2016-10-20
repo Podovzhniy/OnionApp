@@ -18,7 +18,8 @@ namespace OnionApp.Infrastructure.Data
 
         public IEnumerable<Book> GetBookList()
         {
-            return db.Books.ToList();
+            //return db.Books.ToList();
+            return db.Books;
         }
 
         public Book GetBook(int id)

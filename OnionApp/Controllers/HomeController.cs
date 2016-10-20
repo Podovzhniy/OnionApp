@@ -18,14 +18,16 @@ namespace OnionApp.Controllers
         public ActionResult Index()
         {
             var books = repo.GetBookList();
-            return View();
+
+            return View(books);
         }
 
         public ActionResult Buy(int id)
         {
             Book book = repo.GetBook(id);
             order.MakeOrder(book);
-            return View();
+            //return View();
+            return RedirectToAction("Index");
         }
         protected override void Dispose(bool disposing)
         {
